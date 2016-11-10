@@ -1,1 +1,2 @@
 # fanclub-app
+## authors
