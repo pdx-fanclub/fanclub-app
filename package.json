@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mizutombo/fanclub-app.git"
+    "url": "git+https://github.com/pdx-fanclub/fanclub-app"
   },
   "keywords": [
     "http",
@@ -21,9 +21,9 @@
   "author": "Tom Shultz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mizutombo/fanclub-app"
+    "url": "https://github.com/pdx-fanclub/fanclub-app/issues"
   },
-  "homepage": "https://github.com/mizutombo/fanclub-app#README",
+  "homepage": "https://github.com/fanclub-app#README",
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
