@@ -11,17 +11,21 @@
             "error",
             2
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
+		"quotes": [
             "error",
             "single"
         ],
-        "semi": [
+		"semi": [
             "error",
             "always"
         ],
-    },
+},
+	"globals": {
+	"describe": false,
+	"it": false,
+	"beforeEach": false,
+	"afterEach": false,
+	"before": false,
+	"after": false
+ }
 }
