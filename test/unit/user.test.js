@@ -1,7 +1,5 @@
 const User = require('../../lib/models/user');
 const assert = require('chai').assert;
-const mongoose = require('mongoose');
-mongoose.Promise = Promise;
 
 describe ('User model', () => {
 
