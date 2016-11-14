@@ -21,5 +21,4 @@ describe('Playlist model', () => {
       done();
     });
   });
-
 });

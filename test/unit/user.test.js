@@ -1,15 +1,13 @@
 const User = require('../../lib/models/user');
 const assert = require('chai').assert;
-const mongoose = require('mongoose');
-mongoose.Promise = Promise;
 
 describe ('User model', () => {
 
-  it('validates with username and password', done => {
+  it('validates with username', done => {
 
     const user = new User({
-      username: 'username',
-      password: 'abcd1234'
+      username: 'username'
+      // password: 'abcd1234'
     });
 
     user.validate(err => {
@@ -31,16 +29,16 @@ describe ('User model', () => {
   });
 
 
-  it('password is required', done => {
-    const user = new User();
-    user.username = 'username';
-
-    user.validate(err => {
-      assert.isOk(err, 'password should have been required');
-      done();
-    });
-
-  });
+  // it('password is required', done => {
+  //   const user = new User();
+  //   user.username = 'username';
+  //
+  //   user.validate(err => {
+  //     assert.isOk(err, 'password should have been required');
+  //     done();
+  //   });
+  //
+  // });
 
 // PROBLEMS WITH THIS TEST
   // it('username must be a string', done => {
