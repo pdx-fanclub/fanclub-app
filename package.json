@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run test && node server.js",
     "pretest": "npm run lint",
-    "test": "mocha",
+    "test": "npm run test:unit",
+    "test:unit": "mocha ./test/unit",
     "test:watch": "mocha -- -w",
     "lint": "eslint ."
   },
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/fanclub-app#README",
   "dependencies": {
     "bcryptjs": "^2.3.0",
+    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
