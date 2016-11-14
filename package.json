@@ -6,10 +6,10 @@
   "scripts": {
     "start": "npm run test && node server.js",
     "pretest": "npm run lint",
-    "test": "mocha",
+    "test": "npm run test:unit",
+		"test:unit": "mocha ./test/unit",
     "test:watch": "mocha -- -w",
-    "lint": "eslint .",
-    "testDrew": "mocha $(find test -name '*.js')"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
