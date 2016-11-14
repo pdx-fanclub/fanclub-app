@@ -1,7 +1,5 @@
 const Group = require('../../lib/models/group');
 const assert = require('chai').assert;
-const mongoose = require('mongoose');
-mongoose.Promise = Promise;
 
 describe ('Group model', () => {
 
