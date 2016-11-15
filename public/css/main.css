@@ -1,6 +1,6 @@
-#login, #loggedin {
+/*#login, #loggedin {
     display: none;
-}
+}*/
 .text-overflow {
     overflow: hidden;
     text-overflow: ellipsis;
