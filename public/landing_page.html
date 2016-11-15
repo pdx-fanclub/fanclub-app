@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style type="text/css">
+    #login, #loggedin {
+      /*display: none;*/
+    }
+    .text-overflow {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 500px;
+    }
+  </style>
+  <title>Fanclub</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="login">
+      <h1>Please authorize Fanclub to access your Spotify account</h1>
+        <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
+    </div>
+    <div id="loggedin">
+      <div id="user-profile">
+      </div>
+      <div id="oauth">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Handlebars template for user-profile -->
+  <script id="user-profile-template" type="text/x-handlebars-template">
+    <h1>Logged in as {{display_name}}</h1>
+    <div class="media">
+      <div class="pull-left">
+        <img class="media-object" width="150" src="{{images.0.url}}" />
+      </div>
+      <div class="media-body">
+        <dl class="dl-horizontal">
+          <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+          <dt>Id</dt><dd>{{id}}</dd>
+          <dt>Email</dt><dd>{{email}}</dd>
+          <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
+          <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+          <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+          <dt>Country</dt><dd>{{country}}</dd>
+        </dl>
+      </div>
+    </div>
+  </script>
+
+  <!-- Handlebars template for oauth-profile -->
+  <script id="oauth-template" type="text/x-handlebars-template">
+    <h2>oAuth info</h2>
+    <dl class="dl-horizontal">
+      <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+    </dl>
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+  <!-- 'authorize-spotify.js' included as a script -->
+  <script>
+    const client_id = 'ec093a8e518f46c8be73fe245baa3ee6';
+    const client_secret = '6834af0a52194986830327346a08c3e7';
+    const response_type = 'token';
+    const redirect_uri = 'http://song-club.herokuapp.com/';
+    const popWidth = 600, popHeight = 800,
+        left = (screen.width / 2) - (popWidth /2),
+        popTop = (screen.width / 2) - (popWidth /2);
+
+    var scopes = 'user-read-email playlist-read-private playlist-read-public playlist-read-collaborative user-follow-modify user-follow-read user-library-read user-read-birthdate';
+    scopes = scopes.join(' ');
+
+    function makeURL() {
+            return 'https://accounts.spotify.com/authorize?client_id=' + process.env.CLIENT_ID +
+                   '&redirect_uri=' + encodeURIComponent(redirect_uri) +
+                   '&scope=' + encodeURIComponent(scopes) +
+                   '&response_type=' + encodeURIComponent(response_type)
+    };
+
+    function loginToSpotify() {
+
+        // Listens for the token
+        window.addEventListener("message", event => {
+            var spotifyToken = JSON.parse(event.data);
+            if (spotifyToken.type == "access_token") {
+                console.log('Token recieved from spotify: ', spotifyToken);
+                // Attach the token to the user accout
+
+            } else {
+                console.log('Error no token recieved.')
+            }
+        }, false);
+
+        // Pop up window for user to sign into
+        var x = window.open(
+                    makeURL(),
+                    'Spotify',
+                    'menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=' + width + 'popHeight=' + height + 'top=' + popTop + 'left=' + left);
+    };
+
+    // click handler for 'Login with Spotify' button to call loginToSpotify() 
+    $('#login-button').on('click', function(e){
+      e.preventDefault();
+      loginToSpotify();
+    });
+  </script>
+
+</body>
+</html>
