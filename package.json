@@ -1,7 +1,9 @@
 {
   "name": "fanclub-app",
   "version": "1.0.0",
-  "engines": "6.8.1",
+  "engines": {
+     "node": "6.8.1"
+    },
   "description": "",
   "main": "server.js",
   "scripts": {
