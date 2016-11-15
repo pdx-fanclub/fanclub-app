@@ -7,7 +7,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm run test && node server.js",
+    "start": "node server.js",
     "pretest": "npm run lint",
     "test": "npm run test:unit",
     "test:unit": "mocha ./test/unit",
