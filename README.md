@@ -1,9 +1,6 @@
 # fanclub-app
 
-
-
-
-### Heroku Startup: 
+### Heroku Startup:
 
 Our Heroku startup is uses a branch 'working' instead of master. The installation method is thusly:
 
@@ -33,8 +30,10 @@ Our implementation of OAuth is based on the flow as described in RFC-6749.
 Variables can either be set in the Heroku web site, cli, or included in the .bashrc file on the server. The following script we populate the .bashrc file with the required exported vars, after you include your information.
 
 ```bash
-echo 'export CLIENT_ID="**YOUR CLIENT ID HERE ****' >> ~/.bashrc 
+echo 'export CLIENT_ID="**YOUR CLIENT ID HERE ****' >> ~/.bashrc
 echo 'export CLIENT_SECRET="**YOUR CLIENT SECRET HERE ****' >> ~/.bashrc
-echo 'export REDIRECT_URL="**YOUR REDIRECT ADDRESS HERE ****' >> ~/.bashrc 
-. .bashrc 
+echo 'export REDIRECT_URL="**YOUR REDIRECT ADDRESS HERE ****' >> ~/.bashrc
+. .bashrc
 ```
+=======
+## authors
