@@ -19,7 +19,7 @@
     "http",
     "server"
   ],
-  "author": "Tom Shultz",
+  "author": "Tom Shultz, Drew Stock, Greg Katchmar, Will Nickerson, Albert Reel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pdx-fanclub/fanclub-app/issues"
