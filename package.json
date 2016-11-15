@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "6.8.1"
+  },
   "scripts": {
-    "start": "npm run test && node server.js",
-    "pretest": "npm run lint",
+    "start": "node server.js",,
     "test": "npm run test:unit",
     "test:unit": "mocha ./test/unit",
     "test:watch": "mocha -- -w",
