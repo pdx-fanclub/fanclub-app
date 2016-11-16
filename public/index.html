@@ -60,7 +60,47 @@
     crossorigin="anonymous"></script>
 
   <!-- 'authorize-spotify.js' included as a script -->
-  <script src="./spotify_authorization">
+  <script>
+    const client_id = 'ec093a8e518f46c8be73fe245baa3ee6';
+    const client_secret = '6834af0a52194986830327346a08c3e7';
+    const response_type = 'token';
+    const redirect_uri = 'http://song-club.herokuapp.com/callback';
+    const popWidth = 600, popHeight = 800,
+        left = (screen.width / 2) - (popWidth /2),
+        popTop = (screen.width / 2) - (popWidth /2);
+
+    var scopes = ['user-read-email', 'playlist-read-private'];
+    scopes = scopes.join(' ');
+
+    function makeURL() {
+            return 'https://accounts.spotify.com/authorize?client_id=' + 'ec093a8e518f46c8be73fe245baa3ee6' +
+                   '&redirect_uri=' + encodeURIComponent(redirect_uri) +
+                   '&scope=' + encodeURIComponent(scopes) +
+                   '&response_type=' + encodeURIComponent(response_type)
+    };
+
+    function loginToSpotify() {
+
+        // Listens for the token
+        window.addEventListener("message", event => {
+            var spotifyToken = JSON.parse(event.data);
+            if (spotifyToken.type == "access_token") {
+                console.log('Token recieved from spotify: ', spotifyToken);
+                // Attach the token to the user accout
+
+            } else {
+                console.log('Error no token recieved.')
+            }
+        }, false);
+
+        // Pop up window for user to sign into
+        var x = window.open(
+                    makeURL(),
+                    'Spotify',
+                    'menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=' + popWidth + 'popHeight=' + popHeight + 'top=' + popTop + 'left=' + left);
+    };
+
+    // click handler for 'Login with Spotify' button to call loginToSpotify()
     $('#login-button').on('click', function(e){
       e.preventDefault();
       loginToSpotify();
