@@ -9,8 +9,8 @@
   "scripts": {
     "start": "node server.js",
     "pretest": "npm run lint",
-    "test": "npm run test:unit",
-    "test:unit": "mocha ./test/unit",
+    "test": "npm run test:e2e-unit",
+    "test:e2e-unit": "mocha ./test/e2e-unit",
     "test:watch": "mocha -- -w",
     "lint": "eslint ."
   },
