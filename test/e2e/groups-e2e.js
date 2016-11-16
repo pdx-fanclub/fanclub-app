@@ -114,7 +114,7 @@ describe('Groups Routes e2e', () => {
       .catch(done);
   });
 
-  it('/DELETE playlist', done => {
+  it('/DELETE group', done => {
     request
       .del(`/api/groups/${testSecretGroup._id}`)
       .set('Authorization', `Bearer ${token}`)
