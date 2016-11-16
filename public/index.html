@@ -16,7 +16,7 @@
         <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
     </div>
     <div id="loggedin">
-      <div id="user-profile">http://song-club.herokuapp.com/
+      <div id="user-profile">
       </div>
       <div id="oauth">
       </div>
@@ -66,7 +66,7 @@
     const client_id = 'ec093a8e518f46c8be73fe245baa3ee6';
     const client_secret = '6834af0a52194986830327346a08c3e7';
     const response_type = 'token';
-    const redirect_uri = 'https://www.functionofsound.com/';
+    const redirect_uri = 'https://www.functionofsound.com/callback';
     const popWidth = 600, popHeight = 800,
         left = (screen.width / 2) - (popWidth /2),
         popTop = (screen.width / 2) - (popWidth /2);
@@ -91,7 +91,7 @@
                 // Attach the token to the user accout
 
             } else {
-                console.log('Error no token recieved.')
+                console.log('Error no token recieved.')}
             }
         }, false);
 
