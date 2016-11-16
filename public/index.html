@@ -64,7 +64,7 @@
     const client_id = 'ec093a8e518f46c8be73fe245baa3ee6';
     const client_secret = '6834af0a52194986830327346a08c3e7';
     const response_type = 'token';
-    const redirect_uri = 'http://song-club.herokuapp.com/';
+    const redirect_uri = 'https://www.functionofsound.com/callback';
     const popWidth = 600, popHeight = 800,
         left = (screen.width / 2) - (popWidth /2),
         popTop = (screen.width / 2) - (popWidth /2);
@@ -95,7 +95,8 @@
 
         // Pop up window for user to sign into
         var x = window.open(
-                    makeURL(),
+                    makeURL(),.get('/', (req, res) => {
+        // verify if new use
                     'Spotify',
                     'menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=' + popWidth + 'popHeight=' + popHeight + 'top=' + popTop + 'left=' + left);
     };
