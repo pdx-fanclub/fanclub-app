@@ -2,9 +2,10 @@ const chai = require( 'chai' );
 const chaiHttp = require( 'chai-http' );
 const assert = chai.assert;
 chai.use( chaiHttp );
+const morgan = require('morgan');  // eslint-disable-line
 
-const connection = require( '../lib/setup-mongoose' );
-const app = require( '../lib/app' );
+const connection = require( '../../lib/setup-mongoose' );
+const app = require( '../../lib/app' );
 
 describe( 'users api', () => {
 
@@ -114,13 +115,10 @@ describe( 'users api', () => {
 			.put( testPath )
       .set('authorization', `${token}`)
 			.then( res => {
-  assert.equal( res.body.groupId, testGroup._id); 
+  assert.equal( res.body.groupId, testGroup._id);
   done();
 })
 			.catch( done );
   });
 
 });
-
-
-

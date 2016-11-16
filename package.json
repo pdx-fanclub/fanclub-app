@@ -2,15 +2,15 @@
   "name": "fanclub-app",
   "version": "1.0.0",
   "engines": {
-     "node": "6.8.1"
-    },
+    "node": "6.8.1"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "pretest": "npm run lint",
-    "test": "npm run test:unit",
-    "test:unit": "mocha ./test/unit",
+    "test": "npm run test:e2e-unit",
+    "test:e2e-unit": "mocha ./test/e2e-unit",
     "test:watch": "mocha -- -w",
     "lint": "eslint ."
   },
@@ -38,7 +38,6 @@
     "mongoose": "^4.6.6",
     "morgan": "^1.7.0",
     "request": "^2.78.0",
-    "morgan": "^1.7.0",
     "request-promise": "^4.1.1"
   },
   "devDependencies": {
