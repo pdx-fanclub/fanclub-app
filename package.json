@@ -2,8 +2,8 @@
   "name": "fanclub-app",
   "version": "1.0.0",
   "engines": {
-     "node": "6.8.1"
-    },
+    "node": "6.8.1"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -37,8 +37,8 @@
     "jsonwebtoken": "^7.1.9",
     "mongoose": "^4.6.6",
     "morgan": "^1.7.0",
+    "query-string": "^4.2.3",
     "request": "^2.78.0",
-    "morgan": "^1.7.0",
     "request-promise": "^4.1.1"
   },
   "devDependencies": {
