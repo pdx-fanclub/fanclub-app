@@ -4,17 +4,17 @@ const assert = chai.assert;
 chai.use( chaiHttp );
 const morgan = require('morgan');  // eslint-disable-line
 
-const connection = require( '../../lib/setup-mongoose' );
+const connection = require( '../../lib/test-db-connection' ); // eslint-disable-line
 const app = require( '../../lib/app' );
 
 describe( 'users api', () => {
 
 //clears database and ALL of its collections
-  before( done => {
-    const drop = () => connection.db.dropDatabase( done );
-    if ( connection.readyState === 1 ) drop();
-    else connection.on( 'open', drop );
-  });
+  // before( done => {
+  //   const drop = () => connection.db.dropDatabase( done );
+  //   if ( connection.readyState === 1 ) drop();
+  //   else connection.on( 'open', drop );
+  // });
 
   const request = chai.request( app );
   let token = '';
