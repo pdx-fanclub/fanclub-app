@@ -61,26 +61,6 @@
 
   <!-- 'authorize-spotify.js' included as a script -->
   <script src='../lib/authorize-spotify' type="text/javascript"></script>
-  <script>
-     window.addEventListener('message', event => { // eslint-disable-line
-    var spotifyToken = JSON.parse(event.data);  
-    if (spotifyToken.type == 'access_token') {
-      console.log('Token recieved from spotify: ', spotifyToken);
-      
-      // Attach the token to the user accout
 
-    } else {
-      console.log('Error no token recieved.');
-    }
-  }, false);
-
-  // Pop up window for user to sign into
-    var buildUrl = makeURL();
-    var x = window.open( // eslint-disable-line
-                  buildUrl,
-                  'Spotify',
-                  'menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=' + popWidth + 'height=' + popHeight + 'top=' + popTop + 'left=' + popLeft);
-  }
-</script>
 </body>
 </html>
