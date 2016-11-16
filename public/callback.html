@@ -24,6 +24,15 @@
 
   <script>
     console.log(window.location.hash);
+   
+    var data = { name: 'http.js' }
+    http.post({
+        url: '/api/user',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        onload: function() { console.log(JSON.parse(this.responseText)) }
+    });
+   
    //  window.close();
   </script>
 
