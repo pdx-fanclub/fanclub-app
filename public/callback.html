@@ -23,7 +23,33 @@
   </div>
 
   <script>
-    console.log(window.location.hash);
+    // console.log(window.location.hash);
+
+    var regexHash = location.hash.substr(1),
+        my_token = regexHash.substr(regexHash.indexOf('access_token='))
+            .split('&')[0]
+            .split('=')[1],
+        is_type_bearer = regexHash.substr(regexHash.indexOf('token_type='))
+            .split('&')[0]
+            .split('=')[1],
+        token_expires = regexHash.substr(regexHash.indexOf('expires_in='))
+            .split('&')[0]
+            .split('=')[1];
+
+    console.log('here it is: ', my_token, is_type_bearer, token_expires);
+    
+    if (is_type_bearer === "Bearer") {
+        console.log('got a bearer: lets AJAX the data')
+    }
+
+    //TODO ADD A AJAX PUT OF 
+
+    // my_token
+    // is_type_bearer
+    // token_expires
+
+
+
    //  window.close();
   </script>
 
