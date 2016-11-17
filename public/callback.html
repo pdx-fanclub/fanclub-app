@@ -50,6 +50,10 @@
           url: toUrl,
           data: data
         });
+        $.ajax({
+          type: 'PUT',
+          url:'api/spotify-user/' + localStorage.currUserId;
+        });
     window.close();
     }
 
