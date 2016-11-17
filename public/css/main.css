@@ -27,6 +27,7 @@ header{
 }
 .navbar, ul, li{
 	color: #56E187;
+    padding-top: 4px;
 }
 a:link{
 		text-decoration: none;
