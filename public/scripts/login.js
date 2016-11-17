@@ -8,7 +8,7 @@ const handleSignup = function() {
     };
     $.ajax({ // eslint-disable-line
       method: 'POST',
-      url: 'https://www.functionofsound.com/api/auth/signup',
+      url: '/api/auth/signup',
       data: JSON.stringify(userInfo),
       success: successHandler,
       error: errorHandler,
