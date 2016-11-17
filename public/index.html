@@ -12,8 +12,17 @@
 <body>
   <div class="container">
     <div id="login">
+      <div id="login" class="tab-content">
+
+        <form id="app-auth">
+          <input id="username-input" type="text" name="username" value="username">
+          <input id="password-input" type="password" name="password" value="password">
+          <input id="signup-button" type="button" name="signup" value="signup">
+          <input id="login-button" type="button" name="login" value="login">
+        </form>
+
       <h1>Please authorize Fanclub to access your Spotify account</h1>
-        <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
+        <button id="spotify-login-button" class="btn btn-primary">Log in with Spotify</button>
     </div>
     <div id="loggedin">
       <div id="user-profile">
@@ -23,7 +32,14 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
+  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  crossorigin="anonymous"> -->
+  <!-- </script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
+  <script type="text/javascript" src="scripts/login.js"></script>
   <!-- Handlebars template for user-profile -->
   <script id="user-profile-template" type="text/x-handlebars-template">
     <h1>Logged in as {{display_name}}</h1>
@@ -53,11 +69,6 @@
     </dl>
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-    crossorigin="anonymous">
-  </script>
 
   <!-- 'authorize-spotify.js' included as a script -->
   <script>
@@ -101,7 +112,7 @@
     };
 
     // click handler for 'Login with Spotify' button to call loginToSpotify()
-    $('#login-button').on('click', function(e){
+    $('#spotify-login-button').on('click', function(e){
       e.preventDefault();
       loginToSpotify();
     });
