@@ -1,13 +1,70 @@
 body {
-    font-family: 'Comfortaa', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
 }
 h1 {
-    font-family: 'Righteous', sans-serif;
+  font-family: 'Righteous', sans-serif;
 }
 
 .text-overflow {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500px;
+}
+
+.playlists {
+  display: inline-block;
+  margin-left: 200px;
+  margin-top: 100px;
+  width: 425px;
+  height: 225px;
+  text-align: left;
+  font-size: 24px;
+  border: 3px solid darkblue;
+  border-radius: 5px;
+  overflow: auto;
+}
+#user_playlists {
+  border: none;
+  margin-left: 15px;
+  margin-top: 15px;
+  width: 420px;
+  font-size: 24px;
+  color: blue;
+  overflow: scroll;
+}
+#fanclub_playlists {
+  border: none;
+  margin-left: 15px;
+  margin-top: 15px;
+  width: 420px;
+  font-size: 24px;
+  color: purple;
+  overflow: scroll;
+}
+#submit_button {
+  border: 2px solid red;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-left: 25px;
+  margin-top: 15px;
+  background-color: lightgreen;
+}
+
+.songs {
+  display: inline-block;
+  width: 450px;
+  height: 100px;
+  text-align: center;
+  border: 1px solid blue;
+  overflow: auto;
+}
+
+.groups {
+  display: inline-block;
+  width: 450px;
+  height: 100px;
+  text-align: center;
+  border: 1px solid blue;
+  overflow: auto;
 }
