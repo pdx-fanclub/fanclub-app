@@ -4,7 +4,8 @@ const assert = chai.assert;
 chai.use( chaiHttp );
 const morgan = require('morgan');  // eslint-disable-line
 
-const connection = require( '../../lib/test-db-connection' ); // eslint-disable-line
+// eslint-disable-next-line
+const connection = require( '../../lib/test-db-connection' ); // point to isolation test platform
 const app = require( '../../lib/app' );
 
 describe( 'users api', () => {
