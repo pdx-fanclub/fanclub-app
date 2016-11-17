@@ -14,14 +14,12 @@ This web-app connects music lovers with playlists and genre suggestions using th
 Our Heroku startup uses a branch 'working' instead of master. The installation method is thusly:
 
 ``` bash
-
-student@codeFellows$ mkdir fanclub-app
-student@codeFellows$ cd fanclub-app/
-student@codeFellows$ git clone https://github.com/pdx-fanclub/fanclub-app.git
-student@codeFellows$ heroku create your_project_name_for_heroku
-student@codeFellows$ git push heroku working:master
-student@codeFellows$ heroku ps:scale web=1
-
+    student@codeFellows$ mkdir fanclub-app
+    student@codeFellows$ cd fanclub-app/
+    student@codeFellows$ git clone https://github.com/pdx-fanclub/fanclub-app.git
+    student@codeFellows$ heroku create your_project_name_for_heroku
+    student@codeFellows$ git push heroku working:master
+    student@codeFellows$ heroku ps:scale web=1
 ```
 
 By using working:master we tell git to push our working branch into the Heroku master branch. Branches other than master are not deployed by heroku, so this is only required if you are using a non-master head.
