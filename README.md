@@ -79,7 +79,10 @@ Drew Stock
 Tom Schultz
 Albert Reel
 
-
 ### Database
 
 This project uses a Mongo database with Mongoose. The server is provided by mlab.com.
+
+### Front to backend communication
+
+Our client and server side JS use AJAX calls to send data between the computers.
