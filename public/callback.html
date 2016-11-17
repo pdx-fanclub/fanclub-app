@@ -43,7 +43,7 @@
           'expires_in': token_expires
         }
         console.log(data);
-        $.put(api_url, data, function(callback) {
+        $.post(api_url, data, function(callback) {
           window.close();
         });
     }
