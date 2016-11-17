@@ -1,4 +1,4 @@
-# fanclub-app
+# Function Of Sound
 
 ## Description
 
@@ -49,8 +49,6 @@ SSL/https are becoming the prevalent standard for securing web development. Addi
     Subject: C=US; ST=CA; L=SF; O=Heroku; CN=www.example.com
 ```
 
- 
-
 ### OAuth 2.0
 
 Our implementation of OAuth is based on the flow as described in RFC-6749. Currently we are using the implicit non-renewable token route as outlined in the Spotify API docs.
@@ -68,7 +66,7 @@ Variables can either be set in the Heroku web site, cli, or included in the .bas
 ```bash
 
 echo 'export CLIENT_ID="**YOUR CLIENT ID HERE ****"' >> ~/.bashrc
-echo 'export CLIENT_SECRET="**YOUR CLIENT SECows our users to sign into their accounts. After signning in, a temporary token is generated to allow the user and our server access to Spotify's full features.RET HERE ****"' >> ~/.bashrc
+echo 'export CLIENT_SECRET="**YOUR CLIENT SECRET HERE ****"' >> ~/.bashrc
 echo 'export REDIRECT_URL="**YOUR REDIRECT ADDRESS HERE ****"' >> ~/.bashrc
 . .bashrc
 ```
