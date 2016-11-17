@@ -8,7 +8,7 @@ const handleSignup = function() {
     };
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3000/api/auth/signup',
+      url: 'https://www.functionofsound.com/api/auth/signup',
       data: JSON.stringify(userInfo),
       success: successHandler,
       error: errorHandler,
@@ -36,7 +36,7 @@ const handleLogin = function() {
     };
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3000/api/auth/signin',
+      url: 'www.functionofsound.com/api/auth/signin',
       data: JSON.stringify(userInfo),
       success: successHandler,
       error: errorHandler,
