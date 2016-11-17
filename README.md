@@ -30,7 +30,7 @@ By using working:master we tell git to push our working branch into the Heroku m
 
 SSL/https are becoming the prevalent standard for securing web development. Additionally we wanted to have an HTTPS endpoint to secure the token exchange with spotify. While signing creating and signing our own certificate is certainly possible, we chose the letsEncrypt.com a 503(c) which lowers the cost of entry for developers looking for a certificate authority. Lets encrypt is relatively new however it has support from Mozilla, Google, Cisco, Facebook, et al;
 
- 1. Register a domain name: google.domains for our team
+ 1. [Register a domain name and add it to Heroku:](https://devcenter.heroku.com/articles/custom-domains) google.domains for our team
  2. Redirect the registar DNS to the certificate agent: DNSimple for our team
  3. Apply for certificates from LetsEncrypt using the DNSimple web gui
  4. Wait... certificate authority needs to verify your control of the domain and issue certificates
@@ -47,7 +47,7 @@ SSL/https are becoming the prevalent standard for securing web development. Addi
     Issuer: C=US; ST=CA; L=SF; O=Heroku; CN=www.example.com
     Starts At: 2011-11-01 21:53:18 GMT
     Subject: C=US; ST=CA; L=SF; O=Heroku; CN=www.example.com
-...
+```
 
  
 
@@ -68,7 +68,7 @@ Variables can either be set in the Heroku web site, cli, or included in the .bas
 ```bash
 
 echo 'export CLIENT_ID="**YOUR CLIENT ID HERE ****"' >> ~/.bashrc
-echo 'export CLIENT_SECRET="**YOUR CLIENT SECRET HERE ****"' >> ~/.bashrc
+echo 'export CLIENT_SECRET="**YOUR CLIENT SECows our users to sign into their accounts. After signning in, a temporary token is generated to allow the user and our server access to Spotify's full features.RET HERE ****"' >> ~/.bashrc
 echo 'export REDIRECT_URL="**YOUR REDIRECT ADDRESS HERE ****"' >> ~/.bashrc
 . .bashrc
 ```
