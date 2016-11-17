@@ -37,6 +37,7 @@
             .split('=')[1];
 
     console.log('here it is: ', my_token, is_type_bearer, token_expires);
+    console.log(this);
     
     if (is_type_bearer === "Bearer") {
         console.log('got a bearer: lets AJAX the data')
