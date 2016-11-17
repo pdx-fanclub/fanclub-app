@@ -1,4 +1,4 @@
-# fanclub-app
+# Function Of Sound
 
 ## Description
 
@@ -19,7 +19,7 @@ student@codeFellows$ mkdir fanclub-app
 student@codeFellows$ cd fanclub-app/
 student@codeFellows$ git clone https://github.com/pdx-fanclub/fanclub-app.git
 student@codeFellows$ heroku create your_project_name_for_heroku
-student@codeFellows$ git push heroku working:master
+student@codeFellows$ git push heroku working:masteranclub-app
 student@codeFellows$ heroku ps:scale web=1
 
 ```
