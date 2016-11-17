@@ -85,11 +85,11 @@
     const client_secret = '6834af0a52194986830327346a08c3e7';
     const response_type = 'token';
     const redirect_uri = 'https://www.functionofsound.com/callback';
-    const popWidth = 300, popHeight = 300, 
+    const popWidth = 300, popHeight = 300,
         left = (screen.width / 2) - (popWidth /2),
         popTop = (screen.width / 2) - (popWidth /2);
 
-    var scopes = ['user-read-email', 'playlist-read-private'];
+    var scopes = ['user-read-email', 'playlist-read-private', 'playlist-modify-public'];
     scopes = scopes.join(' ');
 
     function makeURL() {
