@@ -43,3 +43,8 @@ a.active {
     color: #2273C8;
 		text-decoration: none;
 }
+
+#app-auth {
+    float: right;
+    padding: 4px;
+}
