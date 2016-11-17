@@ -39,7 +39,7 @@
           'token_type': is_type_bearer,
           'expires_in': token_expires
         }
-        let toUrl = 'api/users' + localStorage.currUserId;
+        let toUrl = 'api/users/' + localStorage.currUserId;
         console.log(data);
         console.log(toUrl);
         $.ajax({
