@@ -19,8 +19,6 @@
   </div>
   
   <script>
-    // console.log(window.location.hash);
-
     var regexHash = location.hash.substr(1),
         my_token = regexHash.substr(regexHash.indexOf('access_token='))
             .split('&')[0]
@@ -41,7 +39,7 @@
           'token_type': is_type_bearer,
           'expires_in': token_expires
         }
-        let toUrl = 'api/spotify-user' + localStorage.currUserId;
+        let toUrl = 'api/users' + localStorage.currUserId;
         console.log(data);
         console.log(toUrl);
         $.ajax({
@@ -50,18 +48,9 @@
           data: data
         });
     }
-
-    //TODO ADD A AJAX PUT OF 
-
-    // my_token
-    // is_type_bearer
-    // token_expires
-
-
     //window.close();
 
   </script>
   
-
 </body>
 </html>
