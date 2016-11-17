@@ -49,3 +49,14 @@ a.active {
     float: right;
     padding: 4px;
 }
+
+#username-input, #password-input {
+        color: #69C4D0;
+}
+
+.unkUser {
+    margin-bottom: 20px;
+}
+.knowUser {
+    display: none;
+}
