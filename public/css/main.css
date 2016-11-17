@@ -27,6 +27,7 @@ header{
 }
 .navbar, ul, li{
 	color: #56E187;
+    padding-top: 4px;
 }
 a:link{
 		text-decoration: none;
@@ -42,4 +43,20 @@ a:hover {
 a.active {
     color: #2273C8;
 		text-decoration: none;
+}
+
+#app-auth {
+    float: right;
+    padding: 4px;
+}
+
+#username-input, #password-input {
+        color: #69C4D0;
+}
+
+.unkUser {
+    margin-bottom: 20px;
+}
+.knowUser {
+    display: none;
 }
