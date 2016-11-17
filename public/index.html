@@ -44,7 +44,8 @@
   <div class="container">
     <form id="addGroupForm">
       <input id="groupName-input" type="text" name="groupName" value="groupName">
-      <input id="addGroup-button" type="button" name="addGroup" value="addGroup">
+      <input id="groupDescription-input" type="text" name="groupDescription" value="groupDescription">
+      <input id="addGroup-button" type="button" name="addGroup" value="Add Group">
     </form>
   </div>
 
@@ -56,6 +57,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
   <script type="text/javascript" src="scripts/login.js"></script>
+
+  <script type="text/javascript" src="scripts/publicGroups.js"></script>
+
   <!-- Handlebars template for user-profile -->
   <script id="user-profile-template" type="text/x-handlebars-template">
     <h1>Logged in as {{display_name}}</h1>
