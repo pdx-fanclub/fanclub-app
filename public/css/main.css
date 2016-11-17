@@ -11,3 +11,35 @@ h1 {
     white-space: nowrap;
     width: 500px;
 }
+
+.navbar, ul, li{
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+header{
+    font-family: 'Righteous', sans-serif;
+    font-weight: normal;
+  	margin: 0 auto;
+}
+.navbar, ul, li{
+	color: #56E187;
+}
+a:link{
+		text-decoration: none;
+}
+a:visited {
+    color: #69C4D0;
+		text-decoration: none;
+}
+a:hover {
+    color: #f3ffff;
+		text-decoration: none;
+}
+a.active {
+    color: #2273C8;
+		text-decoration: none;
+}

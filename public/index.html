@@ -6,10 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Righteous" rel="stylesheet">
   <title>Playlist Fanclub</title>
 </head>
 
 <body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="github.html">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="container">
     <div id="login">
       <h1>Please authorize Fanclub to access your Spotify account</h1>
@@ -65,7 +75,15 @@
     const client_secret = '6834af0a52194986830327346a08c3e7';
     const response_type = 'token';
     const redirect_uri = 'https://www.functionofsound.com/callback';
-    const popWidth = 600, popHeight = 800,
+    const popWidth = 600, popHeight = 800,    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="iss.html">ISS Page</a></li>
+                <li><a href="wiki.html">Wiki Page</a></li>
+            </ul>
+        </nav>
+    </header>
         left = (screen.width / 2) - (popWidth /2),
         popTop = (screen.width / 2) - (popWidth /2);
 
