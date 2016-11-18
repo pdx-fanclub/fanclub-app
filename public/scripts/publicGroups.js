@@ -12,7 +12,7 @@
       };
       $.ajax({ // eslint-disable-line
         method: 'POST',
-        url: 'http://localhost:3000/api/groups',
+        url: '/api/groups',
         data: JSON.stringify(newGroupInfo),
         success: successHandler,
         error: errorHandler,
@@ -37,7 +37,7 @@
       event.preventDefault();
       $.ajax({ // eslint-disable-line
         method: 'GET',
-        url: 'http://localhost:3000/api/groups',
+        url: '/api/groups',
         data: JSON.stringify,
         success: successHandler,
         error: errorHandler,
