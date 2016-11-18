@@ -1,6 +1,6 @@
 const renderAllPlaylists = function() {
   $.ajax({
-    url: 'http://localhost:3000/api/playlists',
+    url: '/api/playlists', // Localhost removed
     success: successHandler,
     error: err => console.error(err)
   });
