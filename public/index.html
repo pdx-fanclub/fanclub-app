@@ -17,6 +17,8 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="https://github.com/pdx-fanclub/fanclub-app">GitHub</a></li>
+        <li><a href="#" id="groupNavBtn">Groups</a></li>
+        <li><a href="#" id="playNavBtn">Playlists</a></li>
       </ul>
       <form id="app-auth">
         <input id="username-input" type="text" name="username" value="username">
@@ -24,14 +26,14 @@
         <input id="signup-button" type="button" name="signup" value="signup">
         <input id="login-button" type="button" name="login" value="login">
       </form>
+      <button id="spotify-login-button" class="button knowUser">Log in with Spotify</button>
     </nav>
   </header>
-  <div class="container">
+  <div class="container knowUser" id="all_content">
     <div id="login">
       <div id="login" class="tab-content">
 
       <h1 class='unkUser'>To use our features please sign into your Spotify account</h1>
-        <button id="spotify-login-button" class="button knowUser">Log in with Spotify</button>
     </div>
     <div id="loggedin">
       <div id="user-profile">
@@ -42,21 +44,21 @@
   </div>
 
 
-  <div id="user-playlists">
+  <div id="user-playlists" class="tab-content">
     <button id="get-playlists-button" type="button" name="get-playlists" class="button" >Get your spotify playlists</button>
     <ul id="all-user-playlists">
     </ul>
     <button id="upload-playlist-button" type="button" name="upload-playlist" class="button">Upload selected playlist</button>
   </div>
 
-  <div id="all-playlists">
+  <div id="all-playlists" class="tab-content">
     <ul id="all-playlists-list">
 
     </ul>
     <button id="add-playlist-button" type="button" name="add-playlist" class="button">Add playlist to your spotify!</button>
   </div>
 
-  <div class="container">
+  <div class="container" class="tab-content" id="groupContainer">
     <form id="addGroupForm">
       <input id="groupName-input" type="text" name="groupName" value="groupName" onfocus="if (this.value=='groupName') this.value='';">
       <input id="groupDescription-input" type="text" name="groupDescription" value="groupDescription"
@@ -66,15 +68,12 @@
     </form>
   </div>
 
-
-        <div class="container">
-
-            <section id="all-groups-container">
-              <ul id="search-results-list">
-              </ul>
-            </section>
+  <div class="container" >
+    <section id="all-groups-container" class="tab-content">
+      <ul id="search-results-list">
+      </ul>
+    </section>
   </div>
-
 
   <div class="container">
     <input id="displayUsers-button" type="button" name="displayUsers" value="View All Users" class="button">
@@ -86,11 +85,8 @@
   </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
-  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-  crossorigin="anonymous"> -->
   <!-- </script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
   <script type="text/javascript" src="scripts/login.js"></script>
@@ -122,11 +118,14 @@
   <script id="displayUsers-template" type="text/x-handlebars-template">
 
         <li>
-          <p>Username: {{username}}<br></p>
-          <p>Groups: </p>
+          <p>Username:
+            <a target="_blank" href="{{spotifyUserData.href}}">{{username}}</a>
+          </p>
+          <p>Groups:<br>
           {{#each groupId}}
-          <p>{{this.groupName}}</p>
+            {{this.groupName}}<br>
           {{/each}}
+          </p>
         </li>
 
       </script>
@@ -159,7 +158,6 @@
       <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
     </dl>
   </script>
-
 
   <!-- 'authorize-spotify.js' included as a script -->
   <script>
@@ -207,7 +205,22 @@
     $('#spotify-login-button').on('click', function(e){
       e.preventDefault();
       loginToSpotify();
+      $('#all_content').removeClass('knowUser');
+      $('#spotify-login-button').hide();
     });
+  </script>
+  <script>
+    $('#groupNavBtn').on('click', function () {
+      console.log('groupButton clicked')
+      $('#groupContainer').toggle();
+    });
+
+    $('#playNavBtn').on('click', function () {
+      console.log('Playlist botton clicked');
+      $('#all-playlists').toggle();
+      $('#user-playlists').toggle();
+    });
+    
   </script>
 
   <!-- Google Analytics -->

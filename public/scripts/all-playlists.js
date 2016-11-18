@@ -41,7 +41,7 @@ const addPlaylistHandler = function() {
         } else {
           playlists = data.playlists.push(playlistId);
         }
-        data.playlists = playlists
+        data.playlists = playlists;
         $.ajax({
           type: 'PUT',
           url: `/api/users/${currUserId}`,
