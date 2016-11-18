@@ -1,6 +1,8 @@
 const handleSignup = function() {
   $('#signup-button').on('click', event => { // eslint-disable-line
     console.log('signup clicked');
+    $('#app-auth').addClass('knowUser');
+    $('#spotify-login-button').removeClass('knowUser');
     event.preventDefault();
     const userInfo = {
       username: $('#username-input').val(), // eslint-disable-line
@@ -8,7 +10,7 @@ const handleSignup = function() {
     };
     $.ajax({ // eslint-disable-line
       method: 'POST',
-      url: 'https://www.functionofsound.com/api/auth/signup',
+      url: '/api/auth/signup',
       data: JSON.stringify(userInfo),
       success: successHandler,
       error: errorHandler,
@@ -28,6 +30,8 @@ const handleSignup = function() {
 
 const handleLogin = function() {
   $('#login-button').on('click', event => { // eslint-disable-line
+    $('#app-auth').addClass('knowUser');
+    $('#spotify-login-button').removeClass('knowUser');
     console.log('login clicked');
     event.preventDefault();
     const userInfo = {
@@ -36,7 +40,7 @@ const handleLogin = function() {
     };
     $.ajax({ // eslint-disable-line
       method: 'POST',
-      url: 'www.functionofsound.com/api/auth/signin',
+      url: '/api/auth/signin',
       data: JSON.stringify(userInfo),
       success: successHandler,
       error: errorHandler,
