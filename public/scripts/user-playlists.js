@@ -1,26 +1,26 @@
 const handleGetPlaylists = function() {
-  $('#get-playlists-button').on('click', event => { // eslint-disable-line
+  $('#get-playlists-button').on('click', event => {
     event.preventDefault();
-    $.ajax({ // eslint-disable-line
-      url: '/api/sync-spotify/get-curr-user-playlists', // localhost Removed
+    $.ajax({
+      url: '/api/sync-spotify/get-curr-user-playlists',
       success: successHandler,
       error: err => console.log(err)
     });
 
     function successHandler(data) {
       data.forEach(playlist => {
-        $('#all-user-playlists').append($('<li></li>').text(playlist.name).attr('data-id', playlist.id).attr('data-user', playlist.owner.id).addClass('selectable')); // eslint-disable-line
+        $('#all-user-playlists').append($('<li></li>').text(playlist.name).attr('data-id', playlist.id).attr('data-user', playlist.owner.id).addClass('selectable'));
       });
-      selectPlaylist();
+      selectUserPlaylist();
     }
   });
 };
 
-const selectPlaylist = function() {
-  $('.selectable').on('click', event => { // eslint-disable-line
+const selectUserPlaylist = function() {
+  $('#all-user-playlists .selectable').on('click', event => {
     event.preventDefault();
-    $('.selected').removeClass('selected'); // eslint-disable-line
-    var $target = $(event.target); // eslint-disable-line
+    $('#all-user-playlists .selected').removeClass('selected');
+    var $target = $(event.target);
     $target.addClass('selected');
   });
 };
@@ -29,7 +29,7 @@ const handleUploadPlaylists = function() {
   $('#upload-playlist-button').on('click', event => { // eslint-disable-line
     const playlist = {};
     event.preventDefault();
-    if($('.selected').length === 1) { // eslint-disable-line
+    if($('#all-user-playlists .selected').length === 1) { // eslint-disable-line
       const $selected = $('.selected')[0]; // eslint-disable-line
       playlist.id = $selected.getAttribute('data-id');
       playlist.userId = $selected.getAttribute('data-user');
