@@ -69,7 +69,16 @@ echo 'export REDIRECT_URL="**YOUR REDIRECT ADDRESS HERE ****"' >> ~/.bashrc
 . .bashrc
 ```
 
-## authors
+### authors
+
+The Authors in order of proximity to the wifi hotspots:
+
+Greg Katchmar
+Will Wilkerson 
+Drew Stock
+Tom Schultz
+Albert Reel
+
 
 ### Database
 

@@ -13,6 +13,10 @@
   <div>
     <form class='playlists'>
       <select id='user_playlists' size='5' multiple>
+        <script id='playlist-template' type='text/x-handlebars-template'>
+          <h3>{{name}}</h3>
+          <h3>{{spotify}}</h3>
+        </script>
         <option value='Pink Floyd'>Pink Floyd</option>
         <option value='Oingo Boingo'>Oingo Boingo</option>
         <option value='Red Hot Chili Peppers'>Red Hot Chili Peppers</option>
@@ -26,6 +30,10 @@
 
     <form class='playlists'>
       <select id='fanclub_playlists' size='5' multiple>
+          <script id='playlist-template' type='text/x-handlebars-template'>
+            <h3>{{name}}</h3>
+            <h3>{{spotify}}</h3>
+          </script>
         <option value='AJs Death Metal Mix'>AJ's Death Metal Mix</option>
         <option value='Drews Bluegrass Mix'>Drew's Bluegrass Mix</option>
         <option value='Toms Coding Music Mix'>Tom's Coding Music Mix</option>

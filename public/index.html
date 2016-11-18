@@ -6,14 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Righteous" rel="stylesheet">
   <title>Playlist Fanclub</title>
 </head>
 
 <body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://github.com/pdx-fanclub/fanclub-app">GitHub</a></li>
+      </ul>
+      <form id="app-auth">
+        <input id="username-input" type="text" name="username" value="username">
+        <input id="password-input" type="password" name="password" value="password">
+        <input id="signup-button" type="button" name="signup" value="signup">
+        <input id="login-button" type="button" name="login" value="login">
+      </form>
+    </nav>
+  </header>
   <div class="container">
     <div id="login">
-      <h1>Please authorize Fanclub to access your Spotify account</h1>
-        <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
+      <div id="login" class="tab-content">
+
+      <h1 class='unkUser'>To use our features please sign into your Spotify account</h1>
+        <button id="spotify-login-button" class="btn btn-primary">Log in with Spotify</button>
     </div>
     <div id="loggedin">
       <div id="user-profile">
@@ -23,7 +41,14 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
+  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  crossorigin="anonymous"> -->
+  <!-- </script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
+  <script type="text/javascript" src="scripts/login.js"></script>
   <!-- Handlebars template for user-profile -->
   <script id="user-profile-template" type="text/x-handlebars-template">
     <h1>Logged in as {{display_name}}</h1>
@@ -53,11 +78,6 @@
     </dl>
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-    crossorigin="anonymous">
-  </script>
 
   <!-- 'authorize-spotify.js' included as a script -->
   <script>
@@ -65,7 +85,7 @@
     const client_secret = '6834af0a52194986830327346a08c3e7';
     const response_type = 'token';
     const redirect_uri = 'https://www.functionofsound.com/callback';
-    const popWidth = 600, popHeight = 800,
+    const popWidth = 300, popHeight = 300,
         left = (screen.width / 2) - (popWidth /2),
         popTop = (screen.width / 2) - (popWidth /2);
 
@@ -80,6 +100,7 @@
     };
 
     function loginToSpotify() {
+
 
         // Listens for the token
         window.addEventListener("message", event => {
@@ -101,10 +122,21 @@
     };
 
     // click handler for 'Login with Spotify' button to call loginToSpotify()
-    $('#login-button').on('click', function(e){
+    $('#spotify-login-button').on('click', function(e){
       e.preventDefault();
       loginToSpotify();
     });
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-78750978-4', 'auto');
+    ga('send', 'pageview');
   </script>
 
 </body>

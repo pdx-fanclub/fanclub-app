@@ -21,7 +21,7 @@
       <h1>Success</h1>
     </div>
   </div>
-
+  
   <script>
     // console.log(window.location.hash);
 
@@ -37,6 +37,7 @@
             .split('=')[1];
 
     console.log('here it is: ', my_token, is_type_bearer, token_expires);
+
     
     if (is_type_bearer === "Bearer") {
         console.log('got a bearer: lets AJAX the data')
@@ -49,9 +50,10 @@
     // token_expires
 
 
+    //window.close();
 
-   //  window.close();
   </script>
+  
 
 </body>
 </html>
