@@ -24,14 +24,14 @@
         <input id="signup-button" type="button" name="signup" value="signup">
         <input id="login-button" type="button" name="login" value="login">
       </form>
+      <button id="spotify-login-button" class="button knowUser">Log in with Spotify</button>
     </nav>
   </header>
-  <div class="container">
+  <div class="container knowUser" id="all_content">
     <div id="login">
       <div id="login" class="tab-content">
 
       <h1 class='unkUser'>To use our features please sign into your Spotify account</h1>
-        <button id="spotify-login-button" class="btn btn-primary knowUser">Log in with Spotify</button>
     </div>
     <div id="loggedin">
       <div id="user-profile">
@@ -42,42 +42,39 @@
   </div>
 
 
-  <div id="user-playlists">
-    <button id="get-playlists-button" type="button" name="get-playlists">Get your spotify playlists</button>
+  <div id="user-playlists" class="tab-content">
+    <button id="get-playlists-button" type="button" name="get-playlists" class="button" >Get your spotify playlists</button>
     <ul id="all-user-playlists">
     </ul>
-    <button id="upload-playlist-button" type="button" name="upload-playlist">Upload selected playlist</button>
+    <button id="upload-playlist-button" type="button" name="upload-playlist" class="button">Upload selected playlist</button>
   </div>
 
-  <div id="all-playlists">
+  <div id="all-playlists" class="tab-content">
     <ul id="all-playlists-list">
 
     </ul>
-    <button id="add-playlist-button" type="button" name="add-playlist">Add playlist to your spotify!</button>
+    <button id="add-playlist-button" type="button" name="add-playlist" class="button">Add playlist to your spotify!</button>
   </div>
 
-  <div class="container">
+  <div class="container" class="tab-content">
     <form id="addGroupForm">
       <input id="groupName-input" type="text" name="groupName" value="groupName" onfocus="if (this.value=='groupName') this.value='';">
       <input id="groupDescription-input" type="text" name="groupDescription" value="groupDescription"
       onfocus="if (this.value=='groupDescription') this.value='';">
-      <input id="addGroup-button" type="button" name="addGroup" value="Add Group"></br>
-      <input id="displayGroups-button" type="button" name="displayGroups" value="View All Groups">
+      <input id="addGroup-button" type="button" name="addGroup" value="Add Group" class="button" ></br>
+      <input id="displayGroups-button" type="button" name="displayGroups" value="View All Groups" class="button">
     </form>
   </div>
 
-
-        <div class="container">
-
-            <section id="all-groups-container">
-              <ul id="search-results-list">
-              </ul>
-            </section>
+  <div class="container" >
+    <section id="all-groups-container" class="tab-content">
+      <ul id="search-results-list">
+      </ul>
+    </section>
   </div>
 
-
   <div class="container">
-    <input id="displayUsers-button" type="button" name="displayUsers" value="View All Users">
+    <input id="displayUsers-button" type="button" name="displayUsers" value="View All Users" class="button">
             <!-- List of all users, rendered via Handlebars template -->
             <section id="all-users-container">
               <ul id="search-results-list">
@@ -86,11 +83,8 @@
   </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
-  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-  crossorigin="anonymous"> -->
   <!-- </script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
   <script type="text/javascript" src="scripts/login.js"></script>
@@ -160,7 +154,6 @@
     </dl>
   </script>
 
-
   <!-- 'authorize-spotify.js' included as a script -->
   <script>
     const client_id = 'ec093a8e518f46c8be73fe245baa3ee6';
@@ -207,6 +200,8 @@
     $('#spotify-login-button').on('click', function(e){
       e.preventDefault();
       loginToSpotify();
+      $('#all_content').removeClass('knowUser');
+      $('#spotify-login-button').hide();
     });
   </script>
 

@@ -1,6 +1,7 @@
 const renderAllPlaylists = function() {
 
   $.ajax({
+
     url: '/api/playlists', // Localhost removed
 
     success: successHandler,
