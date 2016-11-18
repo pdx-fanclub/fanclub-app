@@ -60,3 +60,13 @@ a.active {
 .knowUser {
     display: none;
 }
+
+#addGroupForm > input {
+  margin: 1em;
+}
+
+#search-results-list li {
+  display: block;
+  font-size: 1.25em;
+  color: #2a8e4d;
+}

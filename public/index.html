@@ -43,11 +43,25 @@
 
   <div class="container">
     <form id="addGroupForm">
-      <input id="groupName-input" type="text" name="groupName" value="groupName">
-      <input id="groupDescription-input" type="text" name="groupDescription" value="groupDescription">
-      <input id="addGroup-button" type="button" name="addGroup" value="Add Group">
+      <input id="groupName-input" type="text" name="groupName" value="groupName" onfocus="if (this.value=='groupName') this.value='';">
+      <input id="groupDescription-input" type="text" name="groupDescription" value="groupDescription"
+      onfocus="if (this.value=='groupDescription') this.value='';">
+      <input id="addGroup-button" type="button" name="addGroup" value="Add Group"></br>
+      <input id="displayGroups-button" type="button" name="displayGroups" value="View All Groups">
     </form>
   </div>
+
+
+  <div class="container">
+            <section id="all-groups-container">
+              <ul id="search-results-list">
+              </ul>
+            </section>
+        </div>
+    </div>
+  </div>
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
@@ -59,6 +73,19 @@
   <script type="text/javascript" src="scripts/login.js"></script>
 
   <script type="text/javascript" src="scripts/publicGroups.js"></script>
+
+  <!-- Handlebars template for displaying groups -->
+  <script id="displayGroups-template" type="text/x-handlebars-template">
+
+        <li>
+          <p>Group Name: {{groupName}}<br> Description: {{description}}<br></p>
+          <p>Members: </p>
+          {{#each memberId}}
+          <p>{{this.username}}</p>
+          {{/each}}
+        </li>
+
+      </script>
 
   <!-- Handlebars template for user-profile -->
   <script id="user-profile-template" type="text/x-handlebars-template">
