@@ -67,6 +67,14 @@ a.active {
 #all-user-playlists li {
   display: block;
 }
+
+#all-playlists-list {
+  display: block;
+}
+
+#all-playlists-list li {
+  display: block;
+}
 .selectable:hover {
   cursor: pointer;
 }
