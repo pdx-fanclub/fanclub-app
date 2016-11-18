@@ -11,8 +11,11 @@ This web-app connects music lovers with playlists and genre suggestions using th
 
 ### Heroku deployment:
 
-Our Heroku startup uses a branch 'working' instead of master. The installation method is thusly:
+Our app is was deployed with Heroku CLI and the build process is done with github hooks.
 
+#### Heroku CLI
+
+Our Heroku startup uses a branch 'working' instead of master. The installation method is thusly:
 ``` bash
     student@codeFellows$ mkdir fanclub-app
     student@codeFellows$ cd fanclub-app/
@@ -46,6 +49,10 @@ SSL/https are becoming the prevalent standard for securing web development. Addi
     Starts At: 2011-11-01 21:53:18 GMT
     Subject: C=US; ST=CA; L=SF; O=Heroku; CN=www.example.com
 ```
+
+### Heroku Hooks 
+
+Our deployment uses Hooks to trigger a new build and push to the Heroku server. Heroku monitors our github branch "working" instead of "master" for our app. When a change is detected Heroku pulls the new code and rebuild the app. This allows all members of our team to deploy without needing access to the heroku account.
 
 ### OAuth 2.0
 
