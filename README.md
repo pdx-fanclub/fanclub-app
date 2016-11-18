@@ -80,11 +80,7 @@ echo 'export REDIRECT_URL="**YOUR REDIRECT ADDRESS HERE ****"' >> ~/.bashrc
 
 The Authors in order of proximity to the wifi hotspots:
 
-Greg Katchmar
-Will Wilkerson 
-Drew Stock
-Tom Schultz
-Albert Reel
+Greg Katchmar | Will Nickerson | Drew Stock | Tom Shultz | Albert Reel
 
 ### Database
 
