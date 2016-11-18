@@ -1,8 +1,8 @@
 const handleSignup = function() {
   $('#signup-button').on('click', event => { // eslint-disable-line
     console.log('signup clicked');
-    $('#app-auth').addClass('knowUser');
-    $('#spotify-login-button').removeClass('knowUser');
+    $('#app-auth').addClass('knowUser'); // eslint-disable-line
+    $('#spotify-login-button').removeClass('knowUser'); // eslint-disable-line
     event.preventDefault();
     const userInfo = {
       username: $('#username-input').val(), // eslint-disable-line
@@ -30,8 +30,8 @@ const handleSignup = function() {
 
 const handleLogin = function() {
   $('#login-button').on('click', event => { // eslint-disable-line
-    $('#app-auth').addClass('knowUser');
-    $('#spotify-login-button').removeClass('knowUser');
+    $('#app-auth').addClass('knowUser'); // eslint-disable-line
+    $('#spotify-login-button').removeClass('knowUser'); // eslint-disable-line
     console.log('login clicked');
     event.preventDefault();
     const userInfo = {
