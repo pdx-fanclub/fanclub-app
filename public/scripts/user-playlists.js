@@ -2,7 +2,7 @@ const handleGetPlaylists = function() {
   $('#get-playlists-button').on('click', event => {
     event.preventDefault();
     $.ajax({
-      url: 'http://localhost:3000/api/sync-spotify/get-curr-user-playlists',
+      url: '/api/sync-spotify/get-curr-user-playlists', // localhost Removed
       success: successHandler,
       error: err => console.log(err)
     });
@@ -35,7 +35,7 @@ const handleUploadPlaylists = function() {
       playlist.userId = $selected.getAttribute('data-user');
       $.ajax({
         type: 'POST',
-        url: `http://localhost:3000/api/sync-spotify/post-playlist/${playlist.id}/${playlist.userId}`,
+        url: `api/sync-spotify/post-playlist/${playlist.id}/${playlist.userId}`, // localhost Removed
         success: successHandler,
         error: err => console.log(err)
       });
@@ -44,7 +44,7 @@ const handleUploadPlaylists = function() {
     }
     function successHandler(data) {
       $.ajax({
-        url: `http://localhost:3000/api/sync-spotify/get-playlist-tracks/${data._id}`,
+        url: `api/sync-spotify/get-playlist-tracks/${data._id}`, // localhost Removed
         success: data => console.log(data),
         errror: err => console.log(err)
       });
