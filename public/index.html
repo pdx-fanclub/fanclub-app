@@ -41,6 +41,8 @@
     </div>
   </div>
 
+
+  <!-- Form for adding a new group -->
   <div class="container">
     <form id="addGroupForm">
       <input id="groupName-input" type="text" name="groupName" value="groupName" onfocus="if (this.value=='groupName') this.value='';">
@@ -51,17 +53,22 @@
     </form>
   </div>
 
-
   <div class="container">
+            <!-- List of all groups, rendered via Handlebars template -->
             <section id="all-groups-container">
               <ul id="search-results-list">
               </ul>
             </section>
-        </div>
-    </div>
   </div>
 
-
+  <div class="container">
+    <input id="displayUsers-button" type="button" name="displayUsers" value="View All Users">
+            <!-- List of all users, rendered via Handlebars template -->
+            <section id="all-users-container">
+              <ul id="search-results-list">
+              </ul>
+            </section>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
@@ -74,6 +81,9 @@
 
   <script type="text/javascript" src="scripts/publicGroups.js"></script>
 
+  <script type="text/javascript" src="scripts/publicUsers.js"></script>
+
+
   <!-- Handlebars template for displaying groups -->
   <script id="displayGroups-template" type="text/x-handlebars-template">
 
@@ -82,6 +92,20 @@
           <p>Members: </p>
           {{#each memberId}}
           <p>{{this.username}}</p>
+          {{/each}}
+        </li>
+
+      </script>
+
+
+  <!-- Handlebars template for displaying users -->
+  <script id="displayUsers-template" type="text/x-handlebars-template">
+
+        <li>
+          <p>Username: {{username}}<br></p>
+          <p>Groups: </p>
+          {{#each groupId}}
+          <p>{{this.groupName}}</p>
           {{/each}}
         </li>
 

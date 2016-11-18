@@ -69,11 +69,9 @@
   };
 
 
-
   publicGroups.handleAddGroup();
 
   publicGroups.displayAll();
-
 
   module.publicGroups = publicGroups;
 
