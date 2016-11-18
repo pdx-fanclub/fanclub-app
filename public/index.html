@@ -24,14 +24,14 @@
         <input id="signup-button" type="button" name="signup" value="signup">
         <input id="login-button" type="button" name="login" value="login">
       </form>
+      <button id="spotify-login-button" class="button knowUser">Log in with Spotify</button>
     </nav>
   </header>
-  <div class="container">
+  <div class="container knowUser" id="all_content">
     <div id="login">
       <div id="login" class="tab-content">
 
       <h1 class='unkUser'>To use our features please sign into your Spotify account</h1>
-        <button id="spotify-login-button" class="button knowUser">Log in with Spotify</button>
     </div>
     <div id="loggedin">
       <div id="user-profile">
@@ -73,7 +73,6 @@
     </section>
   </div>
 
-
   <div class="container">
     <input id="displayUsers-button" type="button" name="displayUsers" value="View All Users" class="button">
             <!-- List of all users, rendered via Handlebars template -->
@@ -84,9 +83,8 @@
   </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
   <!-- </script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
   <script type="text/javascript" src="scripts/login.js"></script>
@@ -156,7 +154,6 @@
     </dl>
   </script>
 
-
   <!-- 'authorize-spotify.js' included as a script -->
   <script>
     const client_id = 'ec093a8e518f46c8be73fe245baa3ee6';
@@ -203,6 +200,8 @@
     $('#spotify-login-button').on('click', function(e){
       e.preventDefault();
       loginToSpotify();
+      $('#all_content').removeClass('knowUser');
+      $('#spotify-login-button').hide();
     });
   </script>
 
