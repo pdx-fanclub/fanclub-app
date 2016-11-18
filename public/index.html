@@ -48,6 +48,13 @@
     <button id="upload-playlist-button" type="button" name="upload-playlist">Upload selected playlist</button>
   </div>
 
+  <div id="all-playlists">
+    <ul id="all-playlists-list">
+
+    </ul>
+    <button id="add-playlist-button" type="button" name="add-playlist">Add playlist to your spotify!</button>
+  </div>
+
   <div class="container">
     <form id="addGroupForm">
       <input id="groupName-input" type="text" name="groupName" value="groupName" onfocus="if (this.value=='groupName') this.value='';">
@@ -59,7 +66,7 @@
   </div>
 
 
-  <div class="container">
+        <div class="container">
             <section id="all-groups-container">
               <ul id="search-results-list">
               </ul>
@@ -78,6 +85,8 @@
 
   <script type="text/javascript" src="scripts/login.js"></script>
 
+  <script type="text/javascript" src="scripts/all-playlists.js"></script>
+  
   <script type="text/javascript" src="scripts/user-playlists.js"></script>
 
   <script type="text/javascript" src="scripts/publicGroups.js"></script>
