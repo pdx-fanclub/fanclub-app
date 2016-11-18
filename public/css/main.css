@@ -39,7 +39,7 @@ a:visited {
 		text-decoration: none;
 }
 a:hover {
-    color: #56E187;
+    color: #EC6515;
 		text-decoration: none;
 }
 a.active {
@@ -91,7 +91,7 @@ a.active {
 #search-results-list li {
   display: block;
   font-size: 1.25em;
-  color: #2a8e4d;
+  color: #5630f0;
 }
 .button {
   background: #3498db;
