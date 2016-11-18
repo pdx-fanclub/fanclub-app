@@ -28,7 +28,6 @@ const addPlaylistHandler = function() {
     function successHandler() {
       console.log(`You have added ${playlistName} to your Spotify`);
       const currUserId = localStorage.getItem('currUserId');
-      console.log(currUserId);
       $.ajax({
         url: `/api/users/${currUserId}`,
         success: successHandler,
@@ -57,7 +56,6 @@ const addPlaylistHandler = function() {
         }
       }
     }
-
   });
 };
 
