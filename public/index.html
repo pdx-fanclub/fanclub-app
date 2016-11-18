@@ -122,11 +122,14 @@
   <script id="displayUsers-template" type="text/x-handlebars-template">
 
         <li>
-          <p>Username: {{username}}<br></p>
-          <p>Groups: </p>
+          <p>Username:
+            <a target="_blank" href="{{spotifyUserData.href}}">{{username}}</a>
+          </p>
+          <p>Groups:<br>
           {{#each groupId}}
-          <p>{{this.groupName}}</p>
+            {{this.groupName}}<br>
           {{/each}}
+          </p>
         </li>
 
       </script>
