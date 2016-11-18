@@ -61,6 +61,19 @@ a.active {
     display: none;
 }
 
+#all-user-playlists {
+  display: block;
+}
+#all-user-playlists li {
+  display: block;
+}
+.selectable:hover {
+  cursor: pointer;
+}
+.selected {
+  color: red;
+}
+
 #addGroupForm > input {
   margin: 1em;
 }
