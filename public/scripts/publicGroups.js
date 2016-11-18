@@ -8,7 +8,8 @@
       event.preventDefault();
       const newGroupInfo = {
         groupName: $('#groupName-input').val(), // eslint-disable-line
-        description: $('#groupDescription-input').val() // eslint-disable-line
+        description: $('#groupDescription-input').val(), // eslint-disable-line
+        memberId: ['localStorage.currUserId'] // eslint-disable-line
       };
       $.ajax({ // eslint-disable-line
         method: 'POST',
