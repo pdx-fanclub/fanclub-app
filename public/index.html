@@ -65,14 +65,24 @@
       onfocus="if (this.value=='groupDescription') this.value='';">
       <input id="addGroup-button" type="button" name="addGroup" value="Add Group" class="button" ></br>
       <input id="displayGroups-button" type="button" name="displayGroups" value="View All Groups" class="button">
+    <input id="join-group-button" type="button" name="joinGroups" value="Join Group (BETA)" class="button">
     </form>
   </div>
 
-  <div class="container" >
-    <section id="all-groups-container" class="tab-content">
-      <ul id="search-results-list">
-      </ul>
-    </section>
+  <div class="container">
+
+            <section id="all-groups-container">
+              <ul id="search-results-list">
+              </ul>
+            </section>
+  </div>
+
+  <div class="container">
+
+            <section id="join-groups-container">
+              <ul id="all-user-groups">
+              </ul>
+            </section>
   </div>
 
   <div class="container">
@@ -98,6 +108,8 @@
   <script type="text/javascript" src="scripts/publicGroups.js"></script>
 
   <script type="text/javascript" src="scripts/publicUsers.js"></script>
+
+  <script type="text/javascript" src="scripts/joinGroups.js"></script>
 
 
   <!-- Handlebars template for displaying groups -->
