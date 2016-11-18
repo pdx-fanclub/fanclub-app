@@ -19,6 +19,7 @@
         <li><a href="https://github.com/pdx-fanclub/fanclub-app">GitHub</a></li>
         <li><a href="#" id="groupNavBtn">Groups</a></li>
         <li><a href="#" id="playNavBtn">Playlists</a></li>
+        <li><a href="#" id="cleanbtn">CleanUp</a></li>
       </ul>
       <form id="app-auth">
         <input id="username-input" type="text" name="username" value="username">
@@ -234,6 +235,10 @@
       console.log('Playlist botton clicked');
       $('#all-playlists').toggle();
       $('#user-playlists').toggle();
+    });
+    $('#cleanBtn').on('click', function () {
+      console.log('Playlist botton clicked');
+      $('#search-results-list').empty();
     });
     
   </script>
