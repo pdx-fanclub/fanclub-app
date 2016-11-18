@@ -42,7 +42,13 @@
   </div>
 
 
-  <!-- Form for adding a new group -->
+  <div id="user-playlists">
+    <button id="get-playlists-button" type="button" name="get-playlists">Get your spotify playlists</button>
+    <ul id="all-user-playlists">
+    </ul>
+    <button id="upload-playlist-button" type="button" name="upload-playlist">Upload selected playlist</button>
+  </div>
+
   <div class="container">
     <form id="addGroupForm">
       <input id="groupName-input" type="text" name="groupName" value="groupName" onfocus="if (this.value=='groupName') this.value='';">
@@ -61,6 +67,7 @@
             </section>
   </div>
 
+
   <div class="container">
     <input id="displayUsers-button" type="button" name="displayUsers" value="View All Users">
             <!-- List of all users, rendered via Handlebars template -->
@@ -70,6 +77,7 @@
             </section>
   </div>
 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
@@ -78,6 +86,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 
   <script type="text/javascript" src="scripts/login.js"></script>
+
+  <script type="text/javascript" src="scripts/user-playlists.js"></script>
 
   <script type="text/javascript" src="scripts/publicGroups.js"></script>
 
