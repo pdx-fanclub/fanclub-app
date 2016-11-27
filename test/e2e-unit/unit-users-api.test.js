@@ -2,6 +2,7 @@ const chai = require( 'chai' );
 const chaiHttp = require( 'chai-http' );
 const assert = chai.assert;
 chai.use( chaiHttp );
+// remove dead code, don't add eslint pragma
 const morgan = require('morgan');  // eslint-disable-line
 
 // eslint-disable-next-line
