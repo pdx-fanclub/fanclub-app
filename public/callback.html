@@ -42,7 +42,8 @@
             refresh_token: null
             }
         }
-        let toUrl = 'api/users/' + localStorage.currUserId;
+        // these are absolute, not relative, url's
+        let toUrl = '/api/users/' + localStorage.currUserId;
         console.log(data);
         console.log(toUrl);
         $.ajax({
@@ -52,7 +53,7 @@
         });
         $.ajax({
           type: 'PUT',
-          url:'api/spotify-user/' + localStorage.currUserId
+          url:'/api/spotify-user/' + localStorage.currUserId
         });
     // window.close();
     }

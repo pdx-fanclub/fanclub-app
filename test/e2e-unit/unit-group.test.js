@@ -10,10 +10,8 @@ describe ('Group model', () => {
       description: 'jazz'
     });
 
-    group.validate(err => {
-      if(!err) done();
-      else done(err);
-    });
+    // no need to wrap in function 
+    group.validate(done);
 
   });
 
@@ -34,7 +32,7 @@ describe ('Group model', () => {
     group.groupName = 'groupName';
 
     group.validate(err => {
-      assert.isOk(err, 'password should have been required');
+      assert.isOk(err, 'description should have been required');
       done();
     });
 

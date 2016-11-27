@@ -59,6 +59,7 @@ describe('Groups Routes e2e', () => {
     request
       .get('/api/groups')
       .set('Authorization', `Bearer ${token}`)
+      // what is this about?
       .set('admin', 'super-user')
       .then(res => {
         assert.deepEqual(res.body, ['testRockGroup', 'testSecretGroup']);
